@@ -13,6 +13,7 @@
 		1A2C193426B84C1F00A274FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C193326B84C1F00A274FF /* Preview Assets.xcassets */; };
 		1A2C193C26B85F5B00A274FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C193B26B85F5B00A274FF /* LoginView.swift */; };
 		1A2C193E26B85FEA00A274FF /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C193D26B85FEA00A274FF /* Components.swift */; };
+		D53F8E7426B9B2A00024DCC9 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53F8E7326B9B2A00024DCC9 /* FeedView.swift */; };
 		D56C032526B867C8003B3A15 /* PetMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C032426B867C8003B3A15 /* PetMainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		1A2C193526B84C1F00A274FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2C193B26B85F5B00A274FF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1A2C193D26B85FEA00A274FF /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		D53F8E7326B9B2A00024DCC9 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		D56C032426B867C8003B3A15 /* PetMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 				1A2C192C26B84C1A00A274FF /* Virtual_PetApp.swift */,
 				1A2C192E26B84C1A00A274FF /* ContentView.swift */,
 				D56C032426B867C8003B3A15 /* PetMainView.swift */,
+				D53F8E7326B9B2A00024DCC9 /* FeedView.swift */,
 				1A2C193B26B85F5B00A274FF /* LoginView.swift */,
 				1A2C193D26B85FEA00A274FF /* Components.swift */,
 				1A2C193026B84C1F00A274FF /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 				1A2C193E26B85FEA00A274FF /* Components.swift in Sources */,
 				1A2C192F26B84C1A00A274FF /* ContentView.swift in Sources */,
 				1A2C192D26B84C1A00A274FF /* Virtual_PetApp.swift in Sources */,
+				D53F8E7426B9B2A00024DCC9 /* FeedView.swift in Sources */,
 				D56C032526B867C8003B3A15 /* PetMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

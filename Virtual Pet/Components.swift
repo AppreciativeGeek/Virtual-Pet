@@ -55,6 +55,8 @@ struct ScaledImage: View {  // Taken from Aperture Escape
                 Image(imageName)
                     .resizable()
                     .scaledToFill()
+                    .padding(.leading)
+                    .padding(.trailing)
             }
             .frame(width: width)
         }
