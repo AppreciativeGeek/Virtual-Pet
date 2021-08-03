@@ -14,9 +14,12 @@ struct PetMainView: View {
         GeometryReader { metric in
             VStack {
                 VStack {  // Top bar
-                    StatusDisplay(iconSystemName: "fork.knife", statusValue: 12)
+                    StatusDisplay(iconImageName: "fork.knife.circle", statusValue: 12)
+                    
+                    StatusDisplay(iconSystemName: "zzz", statusValue: 80)
                 }
-                .frame(width: metric.size.width, height: metric.size.height*0.1)
+                .padding()
+                .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
                 
                 VStack {  // Main content
                     // Image(petManager.petType+"idle")

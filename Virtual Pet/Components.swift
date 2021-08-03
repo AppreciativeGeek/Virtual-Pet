@@ -29,8 +29,12 @@ struct StatusDisplay: View {
         HStack {
             if iconSystemName != "" {
                 Image(systemName: iconSystemName)
+                    .resizable()
+                    .frame(width: 30, height: 30)
             } else {
                 Image(iconImageName)
+                    .resizable()
+                    .frame(width: 30, height: 30)
             }
             
             Text("\(statusValue)/100")
