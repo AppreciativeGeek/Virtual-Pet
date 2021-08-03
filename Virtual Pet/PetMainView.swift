@@ -23,11 +23,12 @@ struct PetMainView: View {
                 
                 VStack {  // Main content
                     // Image(petManager.petType+"idle")
+                    
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.8)
                 
                 VStack {  // Bottom bar
-                    
+                    ScaledImage(imageName: "petFood", width: metric.size.width*0.25)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.1)
             }
