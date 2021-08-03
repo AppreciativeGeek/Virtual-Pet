@@ -19,3 +19,21 @@ struct CustomTextField: View {
             .multilineTextAlignment(.center)
     }
 }
+
+struct StatusDisplay: View {
+    var iconSystemName = ""
+    var iconImageName = ""
+    let statusValue: Int
+    
+    var body: some View {
+        HStack {
+            if iconSystemName != "" {
+                Image(systemName: iconSystemName)
+            } else {
+                Image(iconImageName)
+            }
+            
+            Text("\(statusValue)/100")
+        }
+    }
+}
