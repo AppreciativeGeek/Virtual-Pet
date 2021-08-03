@@ -7,32 +7,34 @@
 
 import SwiftUI
 
+struct PetInformation {
+    var userName = String()
+    var petName = String()
+    var petType = String()
+}
+
 struct LoginView: View {
-    @State private var userName = String()
-    @State private var petName = String()
-    @State private var petType = String()
+    @State private var petInformation = PetInformation()
     
     var body: some View {
-        VStack {
-            Text("What is your name?")
-            CustomTextField(placeholder: "Your name", variable: $userName)
+        NavigationView {
+            VStack {
+                Text("What is your name?")
+                CustomTextField(placeholder: "Your name", variable: $petInformation.userName)
+                    .padding()
+                Text("What would you like your pet's name to be?")
+                CustomTextField(placeholder: "Your pet's name", variable: $petInformation.petName)
+                    .padding()
+                Text("What kind of pet would you like to have?")
+                Picker("", selection: $petInformation.petType) {
+                    Text("Dog").tag("dog")
+                }
+                .pickerStyle(SegmentedPickerStyle())
                 .padding()
-            Text("What would you like your pet's name to be?")
-            CustomTextField(placeholder: "Your pet's name", variable: $petName)
-                .padding()
-            Text("What kind of pet would you like to have?")
-            Picker("", selection: $petType) {
-                Text("dog").tag("dog")
+                NavigationLink("Proceed", destination: PetMainView(petInformation: petInformation))
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-            Button(action: {
-                
-            }, label: {
-                Text("Button")
-            })
+            .frame(width: 360, height: 200, alignment: .center)
         }
-        .frame(width: 360, height: 200, alignment: .center)
     }
 }
 

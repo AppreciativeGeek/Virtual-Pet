@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PetMainView: View {
+    let petInformation : PetInformation
     // let petManager: PetManager
     var body: some View {
         GeometryReader { metric in
@@ -44,6 +45,6 @@ struct PetMainView: View {
 
 struct PetMainView_Previews: PreviewProvider {
     static var previews: some View {
-        PetMainView()
+        PetMainView(petInformation: PetInformation())
     }
 }
