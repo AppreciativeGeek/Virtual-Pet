@@ -45,3 +45,21 @@ struct StatusDisplay: View {
         }
     }
 }
+
+struct ImageButton: View {  // Taken from Aperture Escape
+    let imageName: String
+    let label: String
+    let width: CGFloat
+    var body: some View {
+        VStack {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(25)
+            
+            Text(label)
+                .font(.title3)
+        }
+        .frame(width: width)
+    }
+}
