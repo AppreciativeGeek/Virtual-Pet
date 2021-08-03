@@ -22,13 +22,19 @@ struct PetMainView: View {
                 .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
                 
                 VStack {  // Main content
-                    // Image(petManager.petType+"idle")
-                    
+                    // Image(petManager.petType+"-idle")
+                    ScaledImage(imageName: "dog"+"-idle", width: metric.size.width*0.4)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.8)
                 
-                VStack {  // Bottom bar
+                HStack {  // Bottom bar
                     ScaledImage(imageName: "petFood", width: metric.size.width*0.25)
+                        .padding(.trailing)
+                    
+                    ScaledImage(imageName: "ball", width: metric.size.width*0.25)
+                        .padding(.trailing)
+                    
+                    ScaledImage(imageName: "petBed", width: metric.size.width*0.25)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.1)
             }
