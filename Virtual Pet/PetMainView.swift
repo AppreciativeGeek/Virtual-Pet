@@ -25,14 +25,15 @@ struct PetMainView: View {
                 Spacer()
                 VStack {  // Main content
                     Text("\(petManager.petName)")
-                    // Image(petManager.petType+"-idle")
                     ScaledImage(imageName: "\(petManager.petType)"+"-idle", width: metric.size.width*0.4)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.4)
                 Spacer()
                 HStack {  // Bottom bar
-                    ScaledImage(imageName: "petFood", width: metric.size.width*0.25)
-                        .padding(.trailing)
+                    NavigationLink(destination: FeedView(petManager: petManager)) {
+                        ScaledImage(imageName: "petFood", width: metric.size.width*0.25)
+                    }
+                    .padding(.trailing)
                     
                     ScaledImage(imageName: "ball", width: metric.size.width*0.25)
                         .padding(.trailing)
@@ -48,6 +49,6 @@ struct PetMainView: View {
 
 struct PetMainView_Previews: PreviewProvider {
     static var previews: some View {
-        PetMainView(petManager: PetManager(petName: "", userName: "", petType: ""))
+        PetMainView(petManager: PetManager())
     }
 }
