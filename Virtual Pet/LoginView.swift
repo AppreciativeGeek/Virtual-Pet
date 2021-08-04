@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var petManager = PetManager(petName: "", userName: "", petType: "")
+    @ObservedObject var petManager = PetManager()
     
     var body: some View {
         NavigationView {
