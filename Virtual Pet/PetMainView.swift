@@ -15,6 +15,7 @@ struct PetMainView: View {
             VStack {
                 Text("Welcome \(petManager.userName)!")
                     .padding()
+                
                 VStack {  // Top bar
                     StatusDisplay(iconImageName: "fork.knife.circle", statusValue: petManager.hungerStatus)
                     StatusDisplay(iconSystemName: "zzz", statusValue: petManager.energyStatus)
@@ -23,14 +24,12 @@ struct PetMainView: View {
                 .padding(.top)
                 .padding()
                 .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
-                Spacer()
+                
                 VStack {  // Main content
                     Text("\(petManager.petName)")
-                    ScaledImage(imageName: "\(petManager.petType)"+"-idle", width: metric.size.width*0.4)
+                    FittedImage(imageName: "\(petManager.petType)"+"-idle", width: metric.size.width*0.8)
                 }
-                .frame(width: metric.size.width, height: metric.size.height*0.4)
-                
-                Spacer()
+                .frame(width: metric.size.width, height: metric.size.height*0.8)
                 
                 HStack {  // Bottom bar
                     NavigationLink(destination: FeedView(petManager: petManager)) {
