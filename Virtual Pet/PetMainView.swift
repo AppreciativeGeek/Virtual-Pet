@@ -21,13 +21,13 @@ struct PetMainView: View {
                 }
                 .padding()
                 .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
-                
+                Spacer()
                 VStack {  // Main content
                     // Image(petManager.petType+"-idle")
                     ScaledImage(imageName: "dog"+"-idle", width: metric.size.width*0.4)
                 }
-                .frame(width: metric.size.width, height: metric.size.height*0.8)
-                
+                .frame(width: metric.size.width, height: metric.size.height*0.4)
+                Spacer()
                 HStack {  // Bottom bar
                     ScaledImage(imageName: "petFood", width: metric.size.width*0.25)
                         .padding(.trailing)

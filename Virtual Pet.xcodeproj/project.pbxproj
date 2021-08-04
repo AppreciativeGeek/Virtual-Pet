@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A22CBFD26B9B8790066A938 /* PetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A22CBFC26B9B8790066A938 /* PetManager.swift */; };
 		1A2C192D26B84C1A00A274FF /* Virtual_PetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C192C26B84C1A00A274FF /* Virtual_PetApp.swift */; };
 		1A2C192F26B84C1A00A274FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C192E26B84C1A00A274FF /* ContentView.swift */; };
 		1A2C193126B84C1F00A274FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C193026B84C1F00A274FF /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A22CBFC26B9B8790066A938 /* PetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetManager.swift; sourceTree = "<group>"; };
 		1A2C192926B84C1A00A274FF /* Virtual Pet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Pet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2C192C26B84C1A00A274FF /* Virtual_PetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtual_PetApp.swift; sourceTree = "<group>"; };
 		1A2C192E26B84C1A00A274FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				1A2C192C26B84C1A00A274FF /* Virtual_PetApp.swift */,
 				1A2C192E26B84C1A00A274FF /* ContentView.swift */,
 				D56C032426B867C8003B3A15 /* PetMainView.swift */,
+				1A22CBFC26B9B8790066A938 /* PetManager.swift */,
 				D53F8E7326B9B2A00024DCC9 /* FeedView.swift */,
 				1A2C193B26B85F5B00A274FF /* LoginView.swift */,
 				1A2C193D26B85FEA00A274FF /* Components.swift */,
@@ -156,6 +159,7 @@
 				1A2C192D26B84C1A00A274FF /* Virtual_PetApp.swift in Sources */,
 				D53F8E7426B9B2A00024DCC9 /* FeedView.swift in Sources */,
 				D56C032526B867C8003B3A15 /* PetMainView.swift in Sources */,
+				1A22CBFD26B9B8790066A938 /* PetManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
