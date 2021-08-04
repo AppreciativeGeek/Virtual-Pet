@@ -47,6 +47,9 @@ struct PetMainView: View {
             }
         }
         .offset(x: 0, y: -60.0)
+        .onAppear(perform: {
+            petManager.manageStatus()
+        })
     }
 }
 

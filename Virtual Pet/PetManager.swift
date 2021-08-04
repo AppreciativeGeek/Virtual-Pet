@@ -21,4 +21,18 @@ class PetManager : ObservableObject {
         self.userName = userName
         self.petType = petType
     }
+    
+    func manageStatus() {
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+            if self.hungerStatus < 100 && self.hungerStatus >= 0 {
+                self.hungerStatus += 1
+            }
+            if self.energyStatus < 100 && self.energyStatus >= 0 {
+                self.energyStatus += 1
+            }
+            if self.joyStatus < 100 && self.joyStatus >= 0 {
+                self.joyStatus += 1
+            }
+        }
+    }
 }
