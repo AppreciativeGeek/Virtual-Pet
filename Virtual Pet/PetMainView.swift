@@ -38,10 +38,14 @@ struct PetMainView: View {
                     }
                     .padding(.trailing)
                     
-                    ScaledImage(imageName: "ball", width: metric.size.width*0.25)
-                        .padding(.trailing)
+                    NavigationLink(destination: PlayView(petManager: petManager)) {
+                        ScaledImage(imageName: "ball", width: metric.size.width*0.25)
+                            .padding(.trailing)
+                    }
                     
-                    ScaledImage(imageName: "petBed", width: metric.size.width*0.25)
+                    NavigationLink(destination: SleepView(petManager: petManager)) {
+                        ScaledImage(imageName: "petBed", width: metric.size.width*0.25)
+                    }
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.1)
             }
