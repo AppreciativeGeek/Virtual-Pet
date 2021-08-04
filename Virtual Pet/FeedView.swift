@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FeedView: View {
+    let petManager: PetManager
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
@@ -32,6 +34,6 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        FeedView(petManager: PetManager())
     }
 }
