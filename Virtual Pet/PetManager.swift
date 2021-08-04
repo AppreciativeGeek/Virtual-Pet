@@ -11,6 +11,9 @@ class PetManager : ObservableObject {
     @Published var petName: String
     @Published var userName: String
     @Published var petType: String
+    @Published var hungerStatus = 100
+    @Published var energyStatus = 100
+    @Published var joyStatus = 100
     
     init(petName: String, userName: String, petType: String) {
         self.petName = petName

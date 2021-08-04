@@ -16,9 +16,9 @@ struct PetMainView: View {
                 Text("Welcome \(petManager.userName)!")
                     .padding()
                 VStack {  // Top bar
-                    StatusDisplay(iconImageName: "fork.knife.circle", statusValue: 12)
-                    
-                    StatusDisplay(iconSystemName: "zzz", statusValue: 80)
+                    StatusDisplay(iconImageName: "fork.knife.circle", statusValue: petManager.hungerStatus)
+                    StatusDisplay(iconSystemName: "zzz", statusValue: petManager.energyStatus)
+                    StatusDisplay(iconSystemName: "smiley", statusValue: petManager.joyStatus)
                 }
                 .padding()
                 .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
