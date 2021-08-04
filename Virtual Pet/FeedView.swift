@@ -14,17 +14,18 @@ struct FeedView: View {
         GeometryReader { metric in
             VStack {
                 HStack {
-                    ScaledImage(imageName: "petFood1", width: metric.size.width*0.4)
+                    FittedImage(imageName: "petFood1", width: metric.size.width*0.4)
                     
-                    ScaledImage(imageName: "petFood2", width: metric.size.width*0.4)
+                    FittedImage(imageName: "petFood2", width: metric.size.width*0.4)
                 }
                 
                 HStack {
-                    ScaledImage(imageName: "petFood3", width: metric.size.width*0.4)
+                    FittedImage(imageName: "petFood3", width: metric.size.width*0.4)
                     
-                    ScaledImage(imageName: "petFood4", width: metric.size.width*0.4)
+                    FittedImage(imageName: "petFood4", width: metric.size.width*0.4)
                 }
             }
+            .position(x: metric.size.width / 2, y: metric.size.height / 2)
         }
     }
 }

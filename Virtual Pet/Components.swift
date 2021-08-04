@@ -62,3 +62,20 @@ struct ScaledImage: View {  // Taken from Aperture Escape
         }
     }
 }
+
+struct FittedImage: View {  // Taken from Aperture Escape
+    let imageName: String
+    let width: CGFloat
+    var body: some View {
+        VStack {
+            Group {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.leading)
+                    .padding(.trailing)
+            }
+            .frame(width: width)
+        }
+    }
+}
