@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var petManager = PetManager(petName: "", userName: "", petType: "")
+    @ObservedObject var petManager = PetManager()
     
     var body: some View {
         NavigationView {
@@ -34,6 +34,10 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        Group {
+            LoginView()
+            LoginView()
+            LoginView()
+        }
     }
 }

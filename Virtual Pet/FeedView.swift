@@ -16,7 +16,7 @@ struct FeedView: View {
         GeometryReader { metric in
             VStack {
                 Text("Select a Pet Food:")
-                    .font(.title2)
+                    .font(.title3)
                 
                 HStack {
                     Button(action: { removeHunger(value: 10) }) {
