@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PetMainView: View {
-    let petManager: PetManager
+    @ObservedObject var petManager: PetManager
     var body: some View {
         GeometryReader { metric in
             VStack {
@@ -29,7 +29,9 @@ struct PetMainView: View {
                     ScaledImage(imageName: "\(petManager.petType)"+"-idle", width: metric.size.width*0.4)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.4)
+                
                 Spacer()
+                
                 HStack {  // Bottom bar
                     NavigationLink(destination: FeedView(petManager: petManager)) {
                         ScaledImage(imageName: "petFood", width: metric.size.width*0.25)

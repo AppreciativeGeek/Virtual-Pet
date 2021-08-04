@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeedView: View {
-    let petManager: PetManager
+    @ObservedObject var petManager: PetManager
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
@@ -41,7 +41,7 @@ struct FeedView: View {
     }
     
     func removeHunger(value: Int) {
-        self.petManager.hungerStatus -= value
+        petManager.hungerStatus -= value
         self.mode.wrappedValue.dismiss()
     }
 }
