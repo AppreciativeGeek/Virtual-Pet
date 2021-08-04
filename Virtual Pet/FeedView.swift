@@ -15,6 +15,9 @@ struct FeedView: View {
     var body: some View {
         GeometryReader { metric in
             VStack {
+                Text("Select a Pet Food:")
+                    .font(.title2)
+                
                 HStack {
                     Button(action: { removeHunger(value: 10) }) {
                         ImageWithLabel(imageName: "petFood1", width: metric.size.width*0.4, label: "-10 hunger")
