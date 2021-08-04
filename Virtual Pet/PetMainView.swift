@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct PetMainView: View {
-    let petInformation : PetInformation
-    // let petManager: PetManager
+    let petManager: PetManager
     var body: some View {
         GeometryReader { metric in
             VStack {
+                Text("Welcome \(petManager.userName)!")
+                    .padding()
                 VStack {  // Top bar
                     StatusDisplay(iconImageName: "fork.knife.circle", statusValue: 12)
                     
@@ -23,8 +24,9 @@ struct PetMainView: View {
                 .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
                 Spacer()
                 VStack {  // Main content
+                    Text("\(petManager.petName)")
                     // Image(petManager.petType+"-idle")
-                    ScaledImage(imageName: "dog"+"-idle", width: metric.size.width*0.4)
+                    ScaledImage(imageName: "\(petManager.petType)"+"-idle", width: metric.size.width*0.4)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.4)
                 Spacer()
@@ -40,11 +42,12 @@ struct PetMainView: View {
                 .frame(width: metric.size.width, height: metric.size.height*0.1)
             }
         }
+        .offset(x: 0, y: -60.0)
     }
 }
 
 struct PetMainView_Previews: PreviewProvider {
     static var previews: some View {
-        PetMainView(petInformation: PetInformation())
+        PetMainView(petManager: PetManager(petName: "", userName: "", petType: ""))
     }
 }
