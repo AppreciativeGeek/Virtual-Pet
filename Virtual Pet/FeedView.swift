@@ -16,19 +16,33 @@ struct FeedView: View {
         GeometryReader { metric in
             VStack {
                 HStack {
-                    FittedImage(imageName: "petFood1", width: metric.size.width*0.4)
+                    Button(action: { removeHunger(value: 10) }) {
+                        ImageWithLabel(imageName: "petFood1", width: metric.size.width*0.4, label: "-10 hunger")
+                    }
                     
-                    FittedImage(imageName: "petFood2", width: metric.size.width*0.4)
+                    Button(action: { removeHunger(value: 15) })  {
+                        ImageWithLabel(imageName: "petFood2", width: metric.size.width*0.4, label: "-15 hunger")
+                    }
                 }
                 
                 HStack {
-                    FittedImage(imageName: "petFood3", width: metric.size.width*0.4)
+                    Button(action: { removeHunger(value: 20) })  {
+                        ImageWithLabel(imageName: "petFood3", width: metric.size.width*0.4, label: "-20 hunger")
+                    }
                     
-                    FittedImage(imageName: "petFood4", width: metric.size.width*0.4)
+                    Button(action: { removeHunger(value: 5) })  {
+                        ImageWithLabel(imageName: "petFood4", width: metric.size.width*0.4, label: "-5 hunger")
+                            .padding(.top, 55)
+                    }
                 }
             }
             .position(x: metric.size.width / 2, y: metric.size.height / 2)
         }
+    }
+    
+    func removeHunger(value: Int) {
+        self.petManager.hungerStatus -= value
+        self.mode.wrappedValue.dismiss()
     }
 }
 
@@ -37,3 +51,4 @@ struct FeedView_Previews: PreviewProvider {
         FeedView(petManager: PetManager())
     }
 }
+

@@ -39,14 +39,13 @@ struct StatusDisplay: View {
                 }
             }
             .frame(width: 30, height: 30)
-            .padding()
             
             Text("\(statusValue)/100")
         }
     }
 }
 
-struct ScaledImage: View {  // Taken from Aperture Escape
+struct ScaledImage: View {  // This will basically make the image really big
     let imageName: String
     let width: CGFloat
     var body: some View {
@@ -63,7 +62,7 @@ struct ScaledImage: View {  // Taken from Aperture Escape
     }
 }
 
-struct FittedImage: View {  // Taken from Aperture Escape
+struct FittedImage: View {  // This will shrink the image to scale, if needed
     let imageName: String
     let width: CGFloat
     var body: some View {
@@ -76,6 +75,19 @@ struct FittedImage: View {  // Taken from Aperture Escape
                     .padding(.trailing)
             }
             .frame(width: width)
+        }
+    }
+}
+
+struct ImageWithLabel: View {
+    let imageName: String
+    let width: CGFloat
+    let label: String
+    var body: some View {
+        VStack {
+            FittedImage(imageName: imageName, width: width)
+            
+            Text(label)
         }
     }
 }

@@ -20,6 +20,7 @@ struct PetMainView: View {
                     StatusDisplay(iconSystemName: "zzz", statusValue: petManager.energyStatus)
                     StatusDisplay(iconSystemName: "smiley", statusValue: petManager.joyStatus)
                 }
+                .padding(.top)
                 .padding()
                 .frame(width: metric.size.width, height: metric.size.height*0.1, alignment: .leading)
                 Spacer()
