@@ -27,11 +27,7 @@ struct SleepView: View {
             
             Button("Let \(petManager.petName) Go to Sleep", action: {
                 let energyGain = hours * 10
-                if petManager.energyStatus + energyGain > 100 {
-                    petManager.energyStatus = 100
-                } else {
-                    petManager.energyStatus += energyGain
-                }
+                petManager.energyStatus += energyGain
                 self.mode.wrappedValue.dismiss()
             })
             .disabled(hours==0)

@@ -34,11 +34,7 @@ struct PlayView: View {
     }
     
     func addJoy(value: Int) {
-        if petManager.joyStatus + value > 100 {
-            petManager.joyStatus = 100
-        } else {
-            petManager.joyStatus += value
-        }
+        petManager.joyStatus += value
         self.mode.wrappedValue.dismiss()
     }
 }
