@@ -21,15 +21,15 @@ struct HelpView: View {
                     VStack(alignment: .leading) {
                         StatusDisplay(iconImageName: "fork.knife.circle", substituteText: "Food")
                         
-                        HelpText(text: "Rises when feeding,\nFalls when playing or sleeping.")
+                        HelpText(text: "When you feed your pet, this stat will increase.\nWhen your pet sleeps or plays with toys, this will decrease.")
                         
                         StatusDisplay(iconSystemName: "zzz", substituteText: "Energy")
                         
-                        HelpText(text: "Rises when sleeping,\nFalls when playing.")
+                        HelpText(text: "Your pet loses energy after playing for a bit, and restores it by having some rest.")
                         
                         StatusDisplay(iconSystemName: "smiley", substituteText: "Happiness")
                         
-                        HelpText(text: "Rises when playing,\nFalls when sleeping.")
+                        HelpText(text: "Your pet gets happier by playing, and feels worse after some sleep.")
                     }
                     .padding()
                     
