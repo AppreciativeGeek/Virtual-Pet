@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SleepView: View {
-    @State private var hours = 1
+    @State private var hours = 0
     @ObservedObject var petManager: PetManager
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
@@ -19,20 +19,22 @@ struct SleepView: View {
                 .font(.title3)
             
             Picker("", selection: $hours) {
-                ForEach(1...10, id: \.self) {i in
+                ForEach(0...10, id: \.self) {i in
                     Text("\(i)").tag(i)
                 }
             }
             .padding(.top, -60)
             
             Button("Let \(petManager.petName) Go to Sleep", action: {
-                if petManager.energyStatus + hours * 5 > 100 {
+                let energyGain = hours * 10
+                if petManager.energyStatus + energyGain > 100 {
                     petManager.energyStatus = 100
                 } else {
-                    petManager.energyStatus += hours * 5
+                    petManager.energyStatus += energyGain
                 }
                 self.mode.wrappedValue.dismiss()
             })
+            .disabled(hours==0)
         }
     }
 }

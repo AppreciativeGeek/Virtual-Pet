@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PetMainView: View {
     @State private var firstAppear = true
+    @State private var showHelp = false
     @ObservedObject var petManager: PetManager
     var body: some View {
         GeometryReader { metric in
@@ -58,6 +59,16 @@ struct PetMainView: View {
             }
         })
         .navigationBarBackButtonHidden(true)
+        .toolbar() {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: { showHelp = true }, label: {
+                    Image(systemName: "questionmark.circle")
+                })
+            }
+        }
+        .sheet(isPresented: $showHelp, content: {
+            HelpView()
+        })
     }
 }
 
