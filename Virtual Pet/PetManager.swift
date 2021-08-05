@@ -12,9 +12,36 @@ class PetManager : ObservableObject {
     @Published var petName: String
     @Published var userName: String
     @Published var petType: String
-    @Published var hungerStatus = 50
-    @Published var energyStatus = 50
-    @Published var joyStatus = 50
+    @Published var hungerStatus = 50 {
+        didSet {
+            if self.hungerStatus > 100 {
+                self.hungerStatus = 100
+            }
+            if self.hungerStatus < 0 {
+                self.hungerStatus = 0
+            }
+        }
+    }
+    @Published var energyStatus = 50 {
+        didSet {
+            if self.energyStatus > 100 {
+                self.energyStatus = 100
+            }
+            if self.energyStatus < 0 {
+                self.energyStatus = 0
+            }
+        }
+    }
+    @Published var joyStatus = 50 {
+        didSet {
+            if self.joyStatus > 100 {
+                self.joyStatus = 100
+            }
+            if self.joyStatus < 0 {
+                self.joyStatus = 0
+            }
+        }
+    }
     
     init(petName: String = "", userName: String = "", petType: String = "dog") {
         self.petName = petName
