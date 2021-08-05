@@ -23,7 +23,8 @@ struct CustomTextField: View {
 struct StatusDisplay: View {
     var iconSystemName = ""
     var iconImageName = ""
-    let statusValue: Int
+    var statusValue = 0
+    var substituteText = ""
     
     var body: some View {
         HStack {
@@ -40,7 +41,11 @@ struct StatusDisplay: View {
             }
             .frame(width: 30, height: 30)
             
-            Text("\(statusValue)/100")
+            if substituteText != "" {
+                Text(substituteText)
+            } else {
+                Text("\(statusValue)/100")
+            }
         }
     }
 }

@@ -44,11 +44,7 @@ struct FeedView: View {
     }
     
     func removeHunger(value: Int) {
-        if petManager.hungerStatus + value > 100 {
-            petManager.hungerStatus = 100
-        } else {
-            petManager.hungerStatus += value
-        }
+        petManager.hungerStatus += value
         self.mode.wrappedValue.dismiss()
     }
 }
