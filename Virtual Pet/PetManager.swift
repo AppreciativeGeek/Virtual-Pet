@@ -9,6 +9,39 @@ import Foundation
 
 class PetManager : ObservableObject {
     // Default values for per-page canvas
+    @Published var petName: String
+    @Published var userName: String
+    @Published var petType: String
+    @Published var hungerStatus = 50 {
+        didSet {
+            if self.hungerStatus > 100 {
+                self.hungerStatus = 100
+            }
+            if self.hungerStatus < 0 {
+                self.hungerStatus = 0
+            }
+        }
+    }
+    @Published var energyStatus = 50 {
+        didSet {
+            if self.energyStatus > 100 {
+                self.energyStatus = 100
+            }
+            if self.energyStatus < 0 {
+                self.energyStatus = 0
+            }
+        }
+    }
+    @Published var joyStatus = 50 {
+        didSet {
+            if self.joyStatus > 100 {
+                self.joyStatus = 100
+            }
+            if self.joyStatus < 0 {
+                self.joyStatus = 0
+            }
+        }
+    }
     @Published var petName: String {
         didSet {
             let encoder = JSONEncoder()
