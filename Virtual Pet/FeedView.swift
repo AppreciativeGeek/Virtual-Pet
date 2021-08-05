@@ -20,21 +20,21 @@ struct FeedView: View {
                 
                 HStack {
                     Button(action: { removeHunger(value: 10) }) {
-                        ImageWithLabel(imageName: "petFood1", width: metric.size.width*0.4, label: "-10 hunger")
+                        ImageWithLabel(imageName: "petFood1", width: metric.size.width*0.4, label: "+10 hunger")
                     }
                     
                     Button(action: { removeHunger(value: 15) })  {
-                        ImageWithLabel(imageName: "petFood2", width: metric.size.width*0.4, label: "-15 hunger")
+                        ImageWithLabel(imageName: "petFood2", width: metric.size.width*0.4, label: "+15 hunger")
                     }
                 }
                 
                 HStack {
                     Button(action: { removeHunger(value: 20) })  {
-                        ImageWithLabel(imageName: "petFood3", width: metric.size.width*0.4, label: "-20 hunger")
+                        ImageWithLabel(imageName: "petFood3", width: metric.size.width*0.4, label: "+20 hunger")
                     }
                     
                     Button(action: { removeHunger(value: 5) })  {
-                        ImageWithLabel(imageName: "petFood4", width: metric.size.width*0.4, label: "-5 hunger")
+                        ImageWithLabel(imageName: "petFood4", width: metric.size.width*0.4, label: "+5 hunger")
                             .padding(.top, 55)
                     }
                 }
@@ -44,7 +44,11 @@ struct FeedView: View {
     }
     
     func removeHunger(value: Int) {
-        petManager.hungerStatus -= value
+        if petManager.hungerStatus + value > 100 {
+            petManager.hungerStatus = 100
+        } else {
+            petManager.hungerStatus += value
+        }
         self.mode.wrappedValue.dismiss()
     }
 }

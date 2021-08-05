@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PetMainView: View {
+    @State private var firstAppear = true
     @ObservedObject var petManager: PetManager
     var body: some View {
         GeometryReader { metric in
@@ -49,9 +50,12 @@ struct PetMainView: View {
                 .frame(width: metric.size.width, height: metric.size.height*0.1)
             }
         }
-        .offset(x: 0, y: -60.0)
+        .offset(x: 0, y: -80.0)
         .onAppear(perform: {
-            petManager.manageStatus()
+            if firstAppear == true {
+                petManager.manageStatus()
+                firstAppear = false
+            }
         })
         .navigationBarBackButtonHidden(true)
     }
