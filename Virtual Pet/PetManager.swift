@@ -9,9 +9,30 @@ import Foundation
 
 class PetManager : ObservableObject {
     // Default values for per-page canvas
-    @Published var petName: String
-    @Published var userName: String
-    @Published var petType: String
+    @Published var petName: String {
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(petName) {
+                UserDefaults.standard.set(encoded, forKey: "petName")
+            }
+        }
+    }
+    @Published var userName: String {
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(userName) {
+                UserDefaults.standard.set(encoded, forKey: "userName")
+            }
+        }
+    }
+    @Published var petType: String {
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(petType) {
+                UserDefaults.standard.set(encoded, forKey: "petType")
+            }
+        }
+    }
     @Published var hungerStatus = 50 {
         didSet {
             if self.hungerStatus > 100 {
@@ -42,33 +63,6 @@ class PetManager : ObservableObject {
             }
         }
     }
-    @Published var petName: String {
-        didSet {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(petName) {
-                UserDefaults.standard.set(encoded, forKey: "petName")
-            }
-        }
-    }
-    @Published var userName: String {
-        didSet {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(userName) {
-                UserDefaults.standard.set(encoded, forKey: "userName")
-            }
-        }
-    }
-    @Published var petType: String {
-        didSet {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(petType) {
-                UserDefaults.standard.set(encoded, forKey: "petType")
-            }
-        }
-    }
-    @Published var hungerStatus = 50
-    @Published var energyStatus = 50
-    @Published var joyStatus = 50
     
     init(petName: String = "", userName: String = "", petType: String = "dog") {
         self.petName = ""
