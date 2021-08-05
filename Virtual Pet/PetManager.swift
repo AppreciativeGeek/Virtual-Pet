@@ -41,6 +41,10 @@ class PetManager : ObservableObject {
             if self.hungerStatus < 0 {
                 self.hungerStatus = 0
             }
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(hungerStatus) {
+                UserDefaults.standard.set(encoded, forKey: "hungerStatus")
+            }
         }
     }
     @Published var energyStatus = 50 {
@@ -51,6 +55,10 @@ class PetManager : ObservableObject {
             if self.energyStatus < 0 {
                 self.energyStatus = 0
             }
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(energyStatus) {
+                UserDefaults.standard.set(encoded, forKey: "energyStatus")
+            }
         }
     }
     @Published var joyStatus = 50 {
@@ -60,6 +68,10 @@ class PetManager : ObservableObject {
             }
             if self.joyStatus < 0 {
                 self.joyStatus = 0
+            }
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(joyStatus) {
+                UserDefaults.standard.set(encoded, forKey: "joyStatus")
             }
         }
     }
@@ -95,6 +107,28 @@ class PetManager : ObservableObject {
         } else {
             self.petType = petType
         }
+        
+        if let hungerStatus = UserDefaults.standard.data(forKey: "hungerStatus") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode(Int.self, from: hungerStatus) {
+                self.hungerStatus = decoded
+            }
+        }
+        
+        if let energyStatus = UserDefaults.standard.data(forKey: "energyStatus") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode(Int.self, from: energyStatus) {
+                self.energyStatus = decoded
+            }
+        }
+        
+        if let joyStatus = UserDefaults.standard.data(forKey: "joyStatus") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode(Int.self, from: joyStatus) {
+                self.joyStatus = decoded
+            }
+        }
+        
     }
     
     public func manageStatus() {
