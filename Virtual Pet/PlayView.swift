@@ -35,6 +35,7 @@ struct PlayView: View {
     
     func addJoy(value: Int) {
         petManager.joyStatus += value
+        petManager.energyStatus -= value
         self.mode.wrappedValue.dismiss()
     }
 }
