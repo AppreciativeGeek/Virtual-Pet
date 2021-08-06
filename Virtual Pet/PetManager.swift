@@ -48,6 +48,9 @@ class PetManager : ObservableObject {
             if self.hungerStatus < 0 {
                 self.hungerStatus = 0
             }
+            
+            checkStatusSum()
+            
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(hungerStatus) {
                 UserDefaults.standard.set(encoded, forKey: "hungerStatus")
@@ -62,6 +65,9 @@ class PetManager : ObservableObject {
             if self.energyStatus < 0 {
                 self.energyStatus = 0
             }
+            
+            checkStatusSum()
+            
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(energyStatus) {
                 UserDefaults.standard.set(encoded, forKey: "energyStatus")
@@ -76,6 +82,9 @@ class PetManager : ObservableObject {
             if self.joyStatus < 0 {
                 self.joyStatus = 0
             }
+            
+            checkStatusSum()
+            
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(joyStatus) {
                 UserDefaults.standard.set(encoded, forKey: "joyStatus")
@@ -150,6 +159,16 @@ class PetManager : ObservableObject {
             if (self.joyStatus <= 100) && (self.joyStatus > 0) {
                 self.joyStatus -= 1
             }
+        }
+    }
+    
+    private func checkStatusSum() {
+        if (self.hungerStatus + self.energyStatus + self.joyStatus) < 100 ||
+            self.hungerStatus < 10 ||
+            self.energyStatus < 10 ||
+            self.joyStatus < 10
+        {
+            self.petSprite = "sad"
         }
     }
 }

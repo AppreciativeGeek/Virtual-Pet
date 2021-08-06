@@ -29,7 +29,7 @@ struct PetMainView: View {
                 
                 VStack {  // Main content
                     Text("\(petManager.petName)")
-                    FittedImage(imageName: "\(petManager.petType)"+"-idle", width: metric.size.width*0.8)
+                    FittedImage(imageName: "\(petManager.petType)-\(petManager.petSprite)", width: metric.size.width*0.8)
                 }
                 .frame(width: metric.size.width, height: metric.size.height*0.8)
                 

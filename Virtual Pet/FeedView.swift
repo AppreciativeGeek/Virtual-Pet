@@ -45,6 +45,7 @@ struct FeedView: View {
     
     func removeHunger(value: Int) {
         petManager.hungerStatus += value
+        petManager.petSprite = "eat"
         self.mode.wrappedValue.dismiss()
     }
 }

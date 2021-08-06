@@ -29,6 +29,7 @@ struct SleepView: View {
                 petManager.energyStatus += hours*10
                 petManager.joyStatus -= hours
                 petManager.hungerStatus -= hours*5
+                petManager.petSprite = "sleep"
                 self.mode.wrappedValue.dismiss()
             })
             .disabled(hours==0)
