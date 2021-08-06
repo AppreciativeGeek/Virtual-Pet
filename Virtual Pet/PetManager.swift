@@ -149,7 +149,7 @@ class PetManager : ObservableObject {
     }
     
     public func manageStatus() {
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
             if (self.hungerStatus <= 100) && (self.hungerStatus > 0) {
                 self.hungerStatus -= 1
             }

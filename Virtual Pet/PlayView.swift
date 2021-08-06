@@ -20,12 +20,12 @@ struct PlayView: View {
                     .font(.title2)
                 
                 HStack {
-                    Button(action: { addJoy(value: 10) }) {
-                        ImageWithLabel(imageName: "dogToy", width: metric.size.width*0.4, label: "+10 joy")
+                    Button(action: { addJoy(value: 15) }) {
+                        ImageWithLabel(imageName: "dogToy", width: metric.size.width*0.4, label: "+15 joy")
                     }
                     
-                    Button(action: { addJoy(value: 15) })  {
-                        ImageWithLabel(imageName: "dogToy2", width: metric.size.width*0.4, label: "+15 joy")
+                    Button(action: { addJoy(value: 25) })  {
+                        ImageWithLabel(imageName: "dogToy2", width: metric.size.width*0.4, label: "+25 joy")
                     }
                 }
             }
@@ -35,7 +35,7 @@ struct PlayView: View {
     
     func addJoy(value: Int) {
         petManager.joyStatus += value
-        petManager.energyStatus -= value
+        petManager.energyStatus -= Int(value/2)
         petManager.petSprite = "play"
         self.mode.wrappedValue.dismiss()
     }
