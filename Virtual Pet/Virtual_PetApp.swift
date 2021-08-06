@@ -11,7 +11,13 @@ import SwiftUI
 struct Virtual_PetApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            NavigationView {
+                if let petName = UserDefaults.standard.data(forKey: "petName") {
+                    PetMainView(petManager: PetManager())
+                } else {
+                    LoginView()
+                }
+            }
         }
     }
 }
