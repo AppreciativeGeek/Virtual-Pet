@@ -33,6 +33,13 @@ class PetManager : ObservableObject {
             }
         }
     }
+    @Published var petSprite = "idle" {
+        didSet {
+            if !["idle", "sad", "sleep", "eat", "play"].contains(petSprite) {
+                self.petSprite = "idle"
+            }
+        }
+    }
     @Published var hungerStatus = 50 {
         didSet {
             if self.hungerStatus > 100 {
@@ -77,36 +84,38 @@ class PetManager : ObservableObject {
     }
     
     init(petName: String = "", userName: String = "", petType: String = "dog") {
-        self.petName = ""
-        self.userName = ""
-        self.petType = ""
+        self.petName = petName
+        self.userName = userName
+        self.petType = petType
         
         if let petName = UserDefaults.standard.data(forKey: "petName") {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode(String.self, from: petName) {
-                self.petName = decoded
+                if decoded != "" {
+                    self.petName = decoded
+                }
             }
-        } else {
-            self.petName = petName
         }
 
         if let userName = UserDefaults.standard.data(forKey: "userName") {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode(String.self, from: userName) {
-                self.userName = decoded
+                if decoded != "" {
+                    self.userName = decoded
+                }
             }
-        } else {
-            self.userName = userName
         }
         
         if let petType = UserDefaults.standard.data(forKey: "petType") {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode(String.self, from: petType) {
-                self.petType = decoded
+                if decoded != "" {
+                    self.petType = decoded
+                }
             }
-        } else {
-            self.petType = petType
         }
+        
+        // petSprite not included since pet returns idle after owner's gone
         
         if let hungerStatus = UserDefaults.standard.data(forKey: "hungerStatus") {
             let decoder = JSONDecoder()
@@ -128,7 +137,6 @@ class PetManager : ObservableObject {
                 self.joyStatus = decoded
             }
         }
-        
     }
     
     public func manageStatus() {
